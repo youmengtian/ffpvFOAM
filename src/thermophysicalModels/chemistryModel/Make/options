@@ -1,0 +1,16 @@
+EXE_INC = \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SF_FPV_SRC)/thermophysicalModels/reactionThermo/lnInclude \
+    -I$(LIB_SF_FPV_SRC)/thermophysicalModels/basic/lnInclude \
+    -I$(LIB_SF_FPV_SRC)/thermophysicalModels/specie/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/functions/Polynomial \
+    -I$(LIB_SRC)/thermophysicalModels/thermophysicalFunctions/lnInclude \
+    -I$(LIB_SRC)/ODE/lnInclude
+
+LIB_LIBS = \
+    -L$(ADD_LIBBIN) \
+    -lFPVfluidThermophysicalModels \
+    -lFPVreactionThermophysicalModels \
+    -lFPVspecie \
+    -lthermophysicalFunctions \
+    -lODE

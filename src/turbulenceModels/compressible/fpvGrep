@@ -1,0 +1,122 @@
+./GenEddyVisc/GenEddyVisc.H:    (modelled viscosity) and epsilon (SGS dissipation).
+./GenEddyVisc/GenEddyVisc.H:        virtual tmp<volScalarField> epsilon() const
+./GenEddyVisc/GenEddyVisc.H:                        "epsilon",
+./DeardorffDiffStress/DeardorffDiffStress.C:      - (2*ce_ - 0.667*cm_)*I*rho()*epsilon()
+./DeardorffDiffStress/DeardorffDiffStress.H:          - c1*rho*epsilon/k*B
+./DeardorffDiffStress/DeardorffDiffStress.H:          - 0.667*(1 - c1)*rho*epsilon*I
+./DeardorffDiffStress/DeardorffDiffStress.H:        epsilon = ce*k^3/2/delta,
+./DeardorffDiffStress/DeardorffDiffStress.H:        epsilon/k = ce*k^1/2/delta
+./GenSGSStress/GenSGSStress.H:    fields for k (SGS turbulent energy) gamma (SGS viscosity) and epsilon
+./GenSGSStress/GenSGSStress.H:        virtual tmp<volScalarField> epsilon() const
+./GenSGSStress/GenSGSStress.H:                        "epsilon",
+./SpalartAllmaras/SpalartAllmaras.H:        virtual tmp<volScalarField> epsilon() const;
+./SpalartAllmaras/SpalartAllmaras.C:tmp<volScalarField> SpalartAllmaras::epsilon() const
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:    (modelled viscosity) and epsilon (SGS dissipation).
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:        virtual tmp<volScalarField> epsilon() const
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:                        "epsilon",
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.C:      - (2*ce_ - 0.667*cm_)*I*rho()*epsilon()
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:          - c1*rho*epsilon/k*B
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:          - 0.667*(1 - c1)*rho*epsilon*I
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:        epsilon = ce*k^3/2/delta,
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:        epsilon/k = ce*k^1/2/delta
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:    fields for k (SGS turbulent energy) gamma (SGS viscosity) and epsilon
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:        virtual tmp<volScalarField> epsilon() const
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:                        "epsilon",
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/SpalartAllmaras/SpalartAllmaras.H:        virtual tmp<volScalarField> epsilon() const;
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/SpalartAllmaras/SpalartAllmaras.C:tmp<volScalarField> SpalartAllmaras::epsilon() const
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.C:      - (2*ce_ - 0.667*cm_)*I*rho()*epsilon()
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:    (modelled viscosity) and epsilon (SGS dissipation).
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:        virtual tmp<volScalarField> epsilon() const
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:                        "epsilon",
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:    fields for k (SGS turbulent energy) gamma (SGS viscosity) and epsilon
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:        virtual tmp<volScalarField> epsilon() const
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:                        "epsilon",
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/SpalartAllmaras.H:        virtual tmp<volScalarField> epsilon() const;
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:          - c1*rho*epsilon/k*B
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:          - 0.667*(1 - c1)*rho*epsilon*I
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:        epsilon = ce*k^3/2/delta,
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:        epsilon/k = ce*k^1/2/delta
+./foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/SpalartAllmaras.C:tmp<volScalarField> SpalartAllmaras::epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:    (modelled viscosity) and epsilon (SGS dissipation).
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:        virtual tmp<volScalarField> epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:                        "epsilon",
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.C:      - (2*ce_ - 0.667*cm_)*I*rho()*epsilon()
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:          - c1*rho*epsilon/k*B
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:          - 0.667*(1 - c1)*rho*epsilon*I
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:        epsilon = ce*k^3/2/delta,
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:        epsilon/k = ce*k^1/2/delta
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:    fields for k (SGS turbulent energy) gamma (SGS viscosity) and epsilon
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:        virtual tmp<volScalarField> epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:                        "epsilon",
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/SpalartAllmaras/SpalartAllmaras.H:        virtual tmp<volScalarField> epsilon() const;
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/SpalartAllmaras/SpalartAllmaras.C:tmp<volScalarField> SpalartAllmaras::epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:    (modelled viscosity) and epsilon (SGS dissipation).
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:        virtual tmp<volScalarField> epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenEddyVisc/GenEddyVisc.H:                        "epsilon",
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.C:      - (2*ce_ - 0.667*cm_)*I*rho()*epsilon()
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:          - c1*rho*epsilon/k*B
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:          - 0.667*(1 - c1)*rho*epsilon*I
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:        epsilon = ce*k^3/2/delta,
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/DeardorffDiffStress/DeardorffDiffStress.H:        epsilon/k = ce*k^1/2/delta
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:    fields for k (SGS turbulent energy) gamma (SGS viscosity) and epsilon
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:        virtual tmp<volScalarField> epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/GenSGSStress/GenSGSStress.H:                        "epsilon",
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/SpalartAllmaras/SpalartAllmaras.H:        virtual tmp<volScalarField> epsilon() const;
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/SpalartAllmaras/SpalartAllmaras.C:tmp<volScalarField> SpalartAllmaras::epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.C:      - (2*ce_ - 0.667*cm_)*I*rho()*epsilon()
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:    (modelled viscosity) and epsilon (SGS dissipation).
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:        virtual tmp<volScalarField> epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:                        "epsilon",
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:    fields for k (SGS turbulent energy) gamma (SGS viscosity) and epsilon
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:        virtual tmp<volScalarField> epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:                        "epsilon",
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/SpalartAllmaras.H:        virtual tmp<volScalarField> epsilon() const;
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:          - c1*rho*epsilon/k*B
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:          - 0.667*(1 - c1)*rho*epsilon*I
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:        epsilon = ce*k^3/2/delta,
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:        epsilon/k = ce*k^1/2/delta
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/foamGrep:/home/ADF/jangim/OpenFOAM/2.3.0/OpenFOAM-2.3.0/src/turbulenceModels/compressible/LES/lnInclude/SpalartAllmaras.C:tmp<volScalarField> SpalartAllmaras::epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.C:      - (2*ce_ - 0.667*cm_)*I*rho()*epsilon()
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:    (modelled viscosity) and epsilon (SGS dissipation).
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:        virtual tmp<volScalarField> epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/GenEddyVisc.H:                        "epsilon",
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:    fields for k (SGS turbulent energy) gamma (SGS viscosity) and epsilon
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:        virtual tmp<volScalarField> epsilon() const
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/GenSGSStress.H:                        "epsilon",
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/SpalartAllmaras.H:        virtual tmp<volScalarField> epsilon() const;
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:          - c1*rho*epsilon/k*B
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:          - 0.667*(1 - c1)*rho*epsilon*I
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:        epsilon = ce*k^3/2/delta,
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/DeardorffDiffStress.H:        epsilon/k = ce*k^1/2/delta
+./fpvGrep:/home/ADF/jangim/OpenFOAM/2.3.0/ADD-2.3.0/src/stochasticFieldsFPVFoam/turbulenceModels/compressible/LES/lnInclude/SpalartAllmaras.C:tmp<volScalarField> SpalartAllmaras::epsilon() const
+./lnInclude/DeardorffDiffStress.C:      - (2*ce_ - 0.667*cm_)*I*rho()*epsilon()
+./lnInclude/GenEddyVisc.H:    (modelled viscosity) and epsilon (SGS dissipation).
+./lnInclude/GenEddyVisc.H:        virtual tmp<volScalarField> epsilon() const
+./lnInclude/GenEddyVisc.H:                        "epsilon",
+./lnInclude/GenSGSStress.H:    fields for k (SGS turbulent energy) gamma (SGS viscosity) and epsilon
+./lnInclude/GenSGSStress.H:        virtual tmp<volScalarField> epsilon() const
+./lnInclude/GenSGSStress.H:                        "epsilon",
+./lnInclude/SpalartAllmaras.H:        virtual tmp<volScalarField> epsilon() const;
+./lnInclude/DeardorffDiffStress.H:          - c1*rho*epsilon/k*B
+./lnInclude/DeardorffDiffStress.H:          - 0.667*(1 - c1)*rho*epsilon*I
+./lnInclude/DeardorffDiffStress.H:        epsilon = ce*k^3/2/delta,
+./lnInclude/DeardorffDiffStress.H:        epsilon/k = ce*k^1/2/delta
+./lnInclude/SpalartAllmaras.C:tmp<volScalarField> SpalartAllmaras::epsilon() const
+Binary file ./Make/linux64GccDPOpt/homogeneousDynOneEqEddy.o matches
+Binary file ./Make/linux64GccDPOpt/GenEddyVisc.o matches
+Binary file ./Make/linux64GccDPOpt/DeardorffDiffStress.o matches
+Binary file ./Make/linux64GccDPOpt/oneEqEddy.o matches
+Binary file ./Make/linux64GccDPOpt/GenSGSStress.o matches
+Binary file ./Make/linux64GccDPOpt/Smagorinsky.o matches
+Binary file ./Make/linux64GccDPOpt/Vreman.o matches
+Binary file ./Make/linux64GccDPOpt/SpalartAllmaras.o matches
+Binary file ./Make/linux64GccDPOpt/lowReOneEqEddy.o matches
+Binary file ./Make/linux64IccDPOpt/homogeneousDynOneEqEddy.o matches
+Binary file ./Make/linux64IccDPOpt/GenEddyVisc.o matches
+Binary file ./Make/linux64IccDPOpt/DeardorffDiffStress.o matches
+Binary file ./Make/linux64IccDPOpt/oneEqEddy.o matches
+Binary file ./Make/linux64IccDPOpt/GenSGSStress.o matches
+Binary file ./Make/linux64IccDPOpt/Smagorinsky.o matches
+Binary file ./Make/linux64IccDPOpt/Vreman.o matches
+Binary file ./Make/linux64IccDPOpt/SpalartAllmaras.o matches
+Binary file ./Make/linux64IccDPOpt/lowReOneEqEddy.o matches

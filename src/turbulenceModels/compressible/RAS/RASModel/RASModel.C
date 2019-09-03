@@ -1,0 +1,275 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     |
+    \\  /    A nd           | Copyright (C) 2011-2012 OpenFOAM Foundation
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+License
+    This file is part of OpenFOAM.
+
+    OpenFOAM is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+    for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+
+Contributors/Copyright
+    2014 Hagen Müller <hagen.mueller@unibw.de> Universität der Bundeswehr München
+    2014 Likun Ma <L.Ma@tudelft.nl> TU Delft
+
+\*---------------------------------------------------------------------------*/
+
+#include "RASModel.H"
+#include "wallFvPatch.H"
+#include "addToRunTimeSelectionTable.H"
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+namespace Foam
+{
+namespace compressible
+{
+
+// * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
+
+defineTypeNameAndDebug(RASModel, 0);
+defineRunTimeSelectionTable(RASModel, dictionary);
+addToRunTimeSelectionTable(turbulenceModel, RASModel, turbulenceModel);
+
+// * * * * * * * * * * * * * Protected Member Functions  * * * * * * * * * * //
+
+void RASModel::printCoeffs()
+{
+    if (printCoeffs_)
+    {
+        Info<< type() << "Coeffs" << coeffDict_ << endl;
+    }
+}
+
+
+// * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
+
+RASModel::RASModel
+(
+    const word& type,
+    const volScalarField& rho,
+    const volVectorField& U,
+    const surfaceScalarField& phi,
+    fluidThermo& thermophysicalModel,              
+    const word& turbulenceModelName
+)
+:
+    turbulenceModel(rho, U, phi, thermophysicalModel, turbulenceModelName),
+
+    IOdictionary
+    (
+        IOobject
+        (
+            "RASProperties",
+            U.time().constant(),
+            U.db(),
+            IOobject::MUST_READ_IF_MODIFIED,
+            IOobject::NO_WRITE
+        )
+    ),
+
+    turbulence_(lookup("turbulence")),
+    printCoeffs_(lookupOrDefault<Switch>("printCoeffs", false)),
+    coeffDict_(subOrEmptyDict(type + "Coeffs")),
+    Cchi_
+    (
+        dimensioned<scalar>::lookupOrAddToDict
+        (
+            "Cchi",
+            coeffDict_,
+            2.0
+        )
+    ),
+    Sc_
+    (
+        dimensioned<scalar>::lookupOrAddToDict
+        (
+            "Sc",
+            coeffDict_,
+            1.0
+        )
+    ),
+    Sct_
+    (
+        dimensioned<scalar>::lookupOrAddToDict
+        (
+            "Sct",
+            coeffDict_,
+            1.0
+        )
+    ),
+    kMin_("kMin", sqr(dimVelocity), SMALL),
+    epsilonMin_("epsilonMin", kMin_.dimensions()/dimTime, SMALL),
+    omegaMin_("omegaMin", dimless/dimTime, SMALL),
+    varf_(thermophysicalModel.varf()),
+    Chi_(thermophysicalModel.Chi())
+{
+    kMin_.readIfPresent(*this);
+    epsilonMin_.readIfPresent(*this);
+    omegaMin_.readIfPresent(*this);
+
+    // Force the construction of the mesh deltaCoeffs which may be needed
+    // for the construction of the derived models and BCs
+    mesh_.deltaCoeffs();
+}
+
+
+// * * * * * * * * * * * * * * * * Selectors * * * * * * * * * * * * * * * * //
+
+autoPtr<RASModel> RASModel::New
+(
+    const volScalarField& rho,
+    const volVectorField& U,
+    const surfaceScalarField& phi,
+    fluidThermo& thermophysicalModel,         
+    const word& turbulenceModelName
+)
+{
+    // get model name, but do not register the dictionary
+    // otherwise it is registered in the database twice
+    const word modelType
+    (
+        IOdictionary
+        (
+            IOobject
+            (
+                "RASProperties",
+                U.time().constant(),
+                U.db(),
+                IOobject::MUST_READ_IF_MODIFIED,
+                IOobject::NO_WRITE,
+                false
+            )
+        ).lookup("RASModel")
+    );
+
+    Info<< "Selecting RAS turbulence model " << modelType << endl;
+
+    dictionaryConstructorTable::iterator cstrIter =
+        dictionaryConstructorTablePtr_->find(modelType);
+
+    if (cstrIter == dictionaryConstructorTablePtr_->end())
+    {
+        FatalErrorIn
+        (
+            "RASModel::New"
+            "("
+                "const volScalarField&, "
+                "const volVectorField&, "
+                "const surfaceScalarField&, "
+                "fluidThermo&, "
+                "const word&"
+            ")"
+        )   << "Unknown RASModel type "
+            << modelType << nl << nl
+            << "Valid RASModel types:" << endl
+            << dictionaryConstructorTablePtr_->sortedToc()
+            << exit(FatalError);
+    }
+
+    return autoPtr<RASModel>
+    (
+        cstrIter()(rho, U, phi, thermophysicalModel, turbulenceModelName)
+    );
+}
+
+
+// * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
+
+void RASModel::correct()
+{
+    turbulenceModel::correct();
+}
+
+
+void RASModel::correctVarf()
+{
+	correctChi();
+
+	tmp<fvScalarMatrix> varfEqn
+    (
+        (
+          	  fvm::ddt(rho_, varf_)
+            + fvm::div(phi_, varf_)
+            - fvm::laplacian(DfEff(), varf_)
+            - 2.0*DfEff()*magSqr(fvc::grad(this->thermo().f()))
+            + rho_*Chi_
+        )
+    );
+
+    varfEqn().relax();
+    varfEqn().boundaryManipulate(varf_.boundaryField());
+
+    solve(varfEqn);
+    varf_.correctBoundaryConditions();
+    bound(varf_, 0.0);
+
+    Info<< "varf min/max   = " << min(varf_).value() << ", "
+        << max(varf_).value() << endl;
+}
+
+void RASModel::correctChi()
+{
+    Chi_ = Cchi_*epsilon()/k()*varf_;
+    bound(Chi_, 0.0);
+}
+
+
+bool RASModel::read()
+{
+    //if (regIOobject::read())
+
+    // Bit of trickery : we are both IOdictionary ('RASProperties') and
+    // an regIOobject from the turbulenceModel level. Problem is to distinguish
+    // between the two - we only want to reread the IOdictionary.
+
+    bool ok = IOdictionary::readData
+    (
+        IOdictionary::readStream
+        (
+            IOdictionary::type()
+        )
+    );
+    IOdictionary::close();
+
+    if (ok)
+    {
+        lookup("turbulence") >> turbulence_;
+
+        if (const dictionary* dictPtr = subDictPtr(type() + "Coeffs"))
+        {
+            coeffDict_ <<= *dictPtr;
+        }
+
+        kMin_.readIfPresent(*this);
+        epsilonMin_.readIfPresent(*this);
+        omegaMin_.readIfPresent(*this);
+
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+} // End namespace compressible
+} // End namespace Foam
+
+// ************************************************************************* //
