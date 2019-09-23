@@ -1,0 +1,4 @@
+DEPENDENCIES = \
+Gamma.dep\
+matlabReader.dep\
+matlabToFoam.dep

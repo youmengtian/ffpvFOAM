@@ -1,0 +1,7 @@
+SOURCE = \
+chemistryReaders/chemkinReader/chemkinReader.C\
+chemistryReaders/chemkinReader/chemkinLexer.C\
+chemistryReaders/chemistryReader/makeChemistryReaders.C\
+mixtures/basicMultiComponentMixture/basicMultiComponentMixture.C\
+rhoReactionThermo/rhoReactionThermo.C\
+rhoReactionThermo/rhoReactionThermos.C

@@ -1,0 +1,11 @@
+DEPENDENCIES = \
+combustionModel/combustionModel.dep\
+rhoCombustionModel/rhoCombustionModel/rhoCombustionModel.dep\
+rhoCombustionModel/rhoCombustionModel/rhoCombustionModelNew.dep\
+rhoCombustionModel/rhoThermoCombustion/rhoThermoCombustion.dep\
+rhoCombustionModel/rhoChemistryCombustion/rhoChemistryCombustion.dep\
+flameletTable/linearInterpolation/linearInterpolation.dep\
+flameletTable/flameletTable/flameletTable.dep\
+flameletTable/tableSolver/tableSolver.dep\
+FPVModel/FPVModels.dep\
+rhoFPVModel/rhoFPVModels.dep

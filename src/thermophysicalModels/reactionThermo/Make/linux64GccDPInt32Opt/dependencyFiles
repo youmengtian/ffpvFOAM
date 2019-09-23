@@ -1,0 +1,7 @@
+DEPENDENCIES = \
+chemistryReaders/chemkinReader/chemkinReader.dep\
+chemistryReaders/chemkinReader/chemkinLexer.dep\
+chemistryReaders/chemistryReader/makeChemistryReaders.dep\
+mixtures/basicMultiComponentMixture/basicMultiComponentMixture.dep\
+rhoReactionThermo/rhoReactionThermo.dep\
+rhoReactionThermo/rhoReactionThermos.dep

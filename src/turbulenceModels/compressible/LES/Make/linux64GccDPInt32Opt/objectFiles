@@ -1,0 +1,14 @@
+OBJECTS = \
+$(OBJECTS_DIR)/LESModel.o\
+$(OBJECTS_DIR)/DESModel.o\
+$(OBJECTS_DIR)/GenEddyVisc.o\
+$(OBJECTS_DIR)/GenSGSStress.o\
+$(OBJECTS_DIR)/Smagorinsky.o\
+$(OBJECTS_DIR)/Vreman.o\
+$(OBJECTS_DIR)/oneEqEddy.o\
+$(OBJECTS_DIR)/lowReOneEqEddy.o\
+$(OBJECTS_DIR)/homogeneousDynOneEqEddy.o\
+$(OBJECTS_DIR)/DeardorffDiffStress.o\
+$(OBJECTS_DIR)/SpalartAllmaras.o\
+$(OBJECTS_DIR)/compressibleLESdelta.o\
+$(OBJECTS_DIR)/vanDriestDelta.o

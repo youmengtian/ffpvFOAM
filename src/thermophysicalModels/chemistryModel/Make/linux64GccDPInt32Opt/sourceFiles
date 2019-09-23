@@ -1,0 +1,5 @@
+SOURCE = \
+chemistryModel/basicChemistryModel/basicChemistryModel.C\
+chemistryModel/rhoChemistryModel/rhoChemistryModel.C\
+chemistryModel/rhoChemistryModel/rhoChemistryModels.C\
+chemistrySolver/chemistrySolver/makeChemistrySolvers.C

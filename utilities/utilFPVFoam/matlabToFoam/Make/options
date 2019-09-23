@@ -10,7 +10,8 @@ EXE_INC = \
     -I$(LIB_SF_FPV_SRC)/thermophysicalModels/reactionThermo/lnInclude \
     -I$(LIB_SF_FPV_SRC)/thermophysicalModels/basic/lnInclude \
     -I$(LIB_SF_FPV_SRC)/thermophysicalModels/chemistryModel/lnInclude \
-    -I$(LIB_SF_FPV_SRC)/combustionModels/lnInclude 
+    -I$(LIB_SF_FPV_SRC)/combustionModels/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude 
     
 EXE_LIBS = \
     -L$(FOAM_USER_LIBBIN) \

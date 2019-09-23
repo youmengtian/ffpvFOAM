@@ -429,7 +429,6 @@ Foam::matlabReader::matlabReader(const IOdictionary& matlabDict, rhoReactionTher
    tableNames_.append("alpha");
    tableNames_.append("psi");
    tableNames_.append("HeatRelease");
-   tableNames_.append("rho"); //added by jianhong, to print the rho_table"
 
    readData_.resize(tableNames_.size());
    sampledData_.resize(tableNames_.size());

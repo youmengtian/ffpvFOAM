@@ -1,0 +1,14 @@
+DEPENDENCIES = \
+LESModel/LESModel.dep\
+DESModel/DESModel.dep\
+GenEddyVisc/GenEddyVisc.dep\
+GenSGSStress/GenSGSStress.dep\
+Smagorinsky/Smagorinsky.dep\
+Vreman/Vreman.dep\
+oneEqEddy/oneEqEddy.dep\
+lowReOneEqEddy/lowReOneEqEddy.dep\
+homogeneousDynOneEqEddy/homogeneousDynOneEqEddy.dep\
+DeardorffDiffStress/DeardorffDiffStress.dep\
+SpalartAllmaras/SpalartAllmaras.dep\
+compressibleLESdelta/compressibleLESdelta.dep\
+vanDriestDelta/vanDriestDelta.dep

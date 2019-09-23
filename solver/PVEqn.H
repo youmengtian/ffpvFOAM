@@ -7,6 +7,7 @@ fvScalarMatrix PVEqn
 	+ fvm::div(phi, PV)
  	- fvm::laplacian(turbulence->DfEff(), PV)
 	==
+
 	  //thermo.PVs()
 	  meanPVs
 	+ sparkPVs       	  

@@ -1,0 +1,14 @@
+LOCAL_OBJECTS = \
+LESModel.o\
+DESModel.o\
+GenEddyVisc.o\
+GenSGSStress.o\
+Smagorinsky.o\
+Vreman.o\
+oneEqEddy.o\
+lowReOneEqEddy.o\
+homogeneousDynOneEqEddy.o\
+DeardorffDiffStress.o\
+SpalartAllmaras.o\
+compressibleLESdelta.o\
+vanDriestDelta.o

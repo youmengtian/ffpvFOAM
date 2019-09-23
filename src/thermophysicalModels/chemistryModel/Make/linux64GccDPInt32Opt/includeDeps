@@ -1,0 +1,4 @@
+include chemistryModel/basicChemistryModel/basicChemistryModel.dep
+include chemistryModel/rhoChemistryModel/rhoChemistryModel.dep
+include chemistryModel/rhoChemistryModel/rhoChemistryModels.dep
+include chemistrySolver/chemistrySolver/makeChemistrySolvers.dep

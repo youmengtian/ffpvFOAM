@@ -1,5 +1,0 @@
-Gamma.cpp
-matlabReader.C
-matlabFPVtablesToFoam.C
-
-EXE = $(FOAM_USER_APPBIN)/newmatlabFPVtablesToFoam

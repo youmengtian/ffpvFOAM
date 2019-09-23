@@ -1,0 +1,11 @@
+LOCAL_OBJECTS = \
+combustionModel.o\
+rhoCombustionModel.o\
+rhoCombustionModelNew.o\
+rhoThermoCombustion.o\
+rhoChemistryCombustion.o\
+linearInterpolation.o\
+flameletTable.o\
+tableSolver.o\
+FPVModels.o\
+rhoFPVModels.o

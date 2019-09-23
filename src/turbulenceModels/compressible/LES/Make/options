@@ -7,7 +7,7 @@ EXE_INC = \
     -I$(LIB_SRC)/finiteVolume/lnInclude
 
 LIB_LIBS = \
-    -L$(ADD_LIBBIN) \
+    -L$(FOAM_USER_LIBBIN) \
     -lFPVcompressibleTurbulenceModel \
     -lLESdeltas \
     -lLESfilters \

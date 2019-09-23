@@ -1,0 +1,9 @@
+include basicThermo/basicThermo.dep
+include fluidThermo/fluidThermo.dep
+include rhoThermo/rhoThermo.dep
+include rhoThermo/rhoThermos.dep
+include derivedFvPatchFields/fixedEnergy/fixedEnergyFvPatchScalarField.dep
+include derivedFvPatchFields/gradientEnergy/gradientEnergyFvPatchScalarField.dep
+include derivedFvPatchFields/mixedEnergy/mixedEnergyFvPatchScalarField.dep
+include derivedFvPatchFields/energyJump/energyJump/energyJumpFvPatchScalarField.dep
+include derivedFvPatchFields/energyJump/energyJumpAMI/energyJumpAMIFvPatchScalarField.dep

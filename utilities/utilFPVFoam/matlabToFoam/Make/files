@@ -1,0 +1,5 @@
+Gamma.cpp
+matlabReader.C
+matlabToFoam.C
+
+EXE = $(FOAM_USER_APPBIN)/matlabToFoam

@@ -1,0 +1,7 @@
+LOCAL_OBJECTS = \
+chemkinReader.o\
+chemkinLexer.o\
+makeChemistryReaders.o\
+basicMultiComponentMixture.o\
+rhoReactionThermo.o\
+rhoReactionThermos.o

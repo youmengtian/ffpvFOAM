@@ -1,0 +1,4 @@
+OBJECTS = \
+$(OBJECTS_DIR)/Gamma.o\
+$(OBJECTS_DIR)/matlabReader.o\
+$(OBJECTS_DIR)/matlabToFoam.o

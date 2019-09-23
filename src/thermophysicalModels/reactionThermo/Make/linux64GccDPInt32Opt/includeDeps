@@ -1,0 +1,6 @@
+include chemistryReaders/chemkinReader/chemkinReader.dep
+include chemistryReaders/chemkinReader/chemkinLexer.dep
+include chemistryReaders/chemistryReader/makeChemistryReaders.dep
+include mixtures/basicMultiComponentMixture/basicMultiComponentMixture.dep
+include rhoReactionThermo/rhoReactionThermo.dep
+include rhoReactionThermo/rhoReactionThermos.dep

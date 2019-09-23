@@ -1,0 +1,50 @@
+# 1 "files"
+# 1 "<built-in>"
+# 1 "<command-line>"
+
+
+
+
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+
+# 17 "/usr/include/stdc-predef.h" 3 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 4 "<command-line>" 2
+# 1 "files"
+combustionModel/combustionModel.C
+
+rhoCombustionModel/rhoCombustionModel/rhoCombustionModel.C
+rhoCombustionModel/rhoCombustionModel/rhoCombustionModelNew.C
+rhoCombustionModel/rhoThermoCombustion/rhoThermoCombustion.C
+rhoCombustionModel/rhoChemistryCombustion/rhoChemistryCombustion.C
+
+flameletTable/linearInterpolation/linearInterpolation.C
+flameletTable/flameletTable/flameletTable.C
+flameletTable/tableSolver/tableSolver.C
+
+FPVModel/FPVModels.C
+rhoFPVModel/rhoFPVModels.C
+
+LIB = $(FOAM_USER_LIBBIN)/libFPVCombustionModels

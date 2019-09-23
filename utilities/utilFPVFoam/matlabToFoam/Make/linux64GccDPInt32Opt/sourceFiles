@@ -1,0 +1,4 @@
+SOURCE = \
+Gamma.cpp\
+matlabReader.C\
+matlabToFoam.C

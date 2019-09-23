@@ -1,0 +1,10 @@
+include combustionModel/combustionModel.dep
+include rhoCombustionModel/rhoCombustionModel/rhoCombustionModel.dep
+include rhoCombustionModel/rhoCombustionModel/rhoCombustionModelNew.dep
+include rhoCombustionModel/rhoThermoCombustion/rhoThermoCombustion.dep
+include rhoCombustionModel/rhoChemistryCombustion/rhoChemistryCombustion.dep
+include flameletTable/linearInterpolation/linearInterpolation.dep
+include flameletTable/flameletTable/flameletTable.dep
+include flameletTable/tableSolver/tableSolver.dep
+include FPVModel/FPVModels.dep
+include rhoFPVModel/rhoFPVModels.dep

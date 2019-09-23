@@ -1,0 +1,7 @@
+OBJECTS = \
+$(OBJECTS_DIR)/chemkinReader.o\
+$(OBJECTS_DIR)/chemkinLexer.o\
+$(OBJECTS_DIR)/makeChemistryReaders.o\
+$(OBJECTS_DIR)/basicMultiComponentMixture.o\
+$(OBJECTS_DIR)/rhoReactionThermo.o\
+$(OBJECTS_DIR)/rhoReactionThermos.o
