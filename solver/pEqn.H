@@ -1,4 +1,4 @@
-{
+	{
     rho = thermo.rho();
 
     // Thermodynamic density needs to be updated by psi*d(p) after the
@@ -52,8 +52,6 @@
           - fvm::laplacian(rAUf, p_rgh)
         );
 
-        fvOptions.constrain(p_rghEqn);
-
         p_rghEqn.solve(mesh.solver(p_rgh.select(pimple.finalInnerIter())));
 
         if (pimple.finalNonOrthogonalIter())
@@ -82,7 +80,7 @@
     {
         dpdt = fvc::ddt(p);
     }
-
+    DpDt = fvc::DDt(surfaceScalarField("phiU", phi/fvc::interpolate(rho)), p);
     #include "rhoEqn.H"
     #include "compressibleContinuityErrs.H"
 }

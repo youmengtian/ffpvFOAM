@@ -213,7 +213,7 @@ void FPVModel<CombThermoType, ThermoType>::correct()
         	 {
 
                  // Calculate normalized PV
-                 PVmax = solver_.interp1D(fCells[cellI], PVmaxTable_);
+                 PVmax = solver_.interp1D(fCells[cellI], PVmaxTable_); 
                  PVNormCells[cellI] = max(min(PVCells[cellI]/max(PVmax,1e-10),1),0);
                  x[0] = PVNormCells[cellI];
 
