@@ -7,4 +7,6 @@ include flameletTable/linearInterpolation/linearInterpolation.dep
 include flameletTable/flameletTable/flameletTable.dep
 include flameletTable/tableSolver/tableSolver.dep
 include FPVModel/FPVModels.dep
+include FPVtestModel/FPVtestModels.dep
+include FPVunnormalizedModel/FPVunnormalizedModels.dep
 include rhoFPVModel/rhoFPVModels.dep

@@ -10,6 +10,8 @@ flameletTable/flameletTable/flameletTable.C
 flameletTable/tableSolver/tableSolver.C
 
 FPVModel/FPVModels.C
+FPVtestModel/FPVtestModels.C
+FPVunnormalizedModel/FPVunnormalizedModels.C
 rhoFPVModel/rhoFPVModels.C
 
 LIB = $(FOAM_USER_LIBBIN)/libFPVCombustionModels

@@ -8,4 +8,6 @@ flameletTable/linearInterpolation/linearInterpolation.dep\
 flameletTable/flameletTable/flameletTable.dep\
 flameletTable/tableSolver/tableSolver.dep\
 FPVModel/FPVModels.dep\
+FPVtestModel/FPVtestModels.dep\
+FPVunnormalizedModel/FPVunnormalizedModels.dep\
 rhoFPVModel/rhoFPVModels.dep

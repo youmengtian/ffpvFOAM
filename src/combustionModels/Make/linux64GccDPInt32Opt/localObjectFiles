@@ -8,4 +8,6 @@ linearInterpolation.o\
 flameletTable.o\
 tableSolver.o\
 FPVModels.o\
+FPVtestModels.o\
+FPVunnormalizedModels.o\
 rhoFPVModels.o
