@@ -1,0 +1,4 @@
+LOCAL_OBJECTS = \
+Gamma.o\
+matlabReader.o\
+integrationFoam.o

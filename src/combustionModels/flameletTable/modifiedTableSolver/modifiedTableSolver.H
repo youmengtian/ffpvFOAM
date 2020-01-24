@@ -21,10 +21,13 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::combustionModels::flameletSolver
+    Foam::combustionModels::modifiedTableSolver
 
 Description
-    Class that holds the table entries and performs the interpolation.
+    Abstract class for the interface between table look-up and combustion model.
+
+SourceFiles
+    modifiedTableSolver.C
 
 Contributors/Copyright
     2014 Hagen Müller <hagen.mueller@unibw.de> Universität der Bundeswehr München
@@ -32,63 +35,80 @@ Contributors/Copyright
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef FLAMELETTABLE_H_
-#define FLAMELETTABLE_H_
+#ifndef TABLESOLVER_H_
+#define TABLESOLVER_H_
 
-#include "fvMesh.H"
-#include "Time.H"
-#include "autoPtr.H"
+#include "flameletTable.H"
+#include "typeInfo.H"
 #include "runTimeSelectionTables.H"
-#include "labelList.H"
-#include "scalarList.H"
+#include "autoPtr.H"
+#include "IOdictionary.H"
+#include "volFields.H"
+#include "fvMesh.H"
 
 namespace Foam
 {
-
-class fvMesh;
-
-class flameletTable
+namespace combustionModels
 {
-private:
 
-	word tableName_;
+class modifiedTableSolver
+:
+	public IOdictionary
+{
+
+protected:
+
+	//- List of the used tables
+	wordList tableNames_;
+
+	//- List of the table parameters
+	wordList paramNames_;
+
+	//- Chemistry tables of all tabulated properties
+	PtrList<flameletTable> tables_;
+
+	//- List of table parameter distributions
+	List<scalarList> params_;
 
 public:
 
 	//- Runtime type information
-    TypeName("flameletTable");
+    TypeName("modifiedTableSolver");
 
     // Declare run-time constructor selection table
     declareRunTimeSelectionTable
     (
         autoPtr,
-        flameletTable,
+        modifiedTableSolver,
         dictionary,
         (
-            const fvMesh &mesh,
-            const word& tableName,
-            const IOdictionary& tableDict
+            const fvMesh &mesh
         ),
-        (mesh, tableName, tableDict)
+        (mesh)
     );
 
     //- Constructor
-    flameletTable(const fvMesh& mesh, const word& tableName, const IOdictionary& tableDict);
-
-    //- Construct and return a clone
-    autoPtr<flameletTable> clone() const;
+    modifiedTableSolver(const fvMesh& mesh, const wordList& tableNames);
 
     //- Destructor
-    virtual ~flameletTable();
+    virtual ~modifiedTableSolver();
 
-    // Selectors
-    //- Return a reference to the selected tableSolver
-    static autoPtr<flameletTable> New(const fvMesh& mesh, const word& tableName, const IOdictionary& tableDict);
+    //- Determine upper bounds for table interpolation
+    List<int> upperBounds(const scalarList& x) const;
 
-    virtual scalar interpolate(const List<int>& ub, const scalarList& pos) const = 0;
-   // virtual scalar modifiedInterpolate(const List<int>& ub, const scalarList& pos) const = 0;   //modified by jianhong, 03/12/2019
+    //- Determine table position
+    scalarList position(const List<int>& ub, const scalarList& x) const;
+
+    //- Interpolate in lookup-table with mixture fraction, mixture fraction variance and scalar dissipation rate
+    scalar interpolate(const List<int>& ub , const scalarList& pos, const label& i) const;
+
+    //- 1D Interpolation
+    scalar interp1D(const scalar& f, const List<scalar>& params);
+
+    int sizeTableNames() const;
 };
 
 } // End Foam namespace
+} // End combustionModels namespace
 
-#endif /* FLAMELETTABLE_H_ */
+#endif /* TABLESOLVER_H_ */

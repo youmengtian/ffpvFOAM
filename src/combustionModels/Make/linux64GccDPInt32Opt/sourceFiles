@@ -7,7 +7,10 @@ rhoCombustionModel/rhoChemistryCombustion/rhoChemistryCombustion.C\
 flameletTable/linearInterpolation/linearInterpolation.C\
 flameletTable/flameletTable/flameletTable.C\
 flameletTable/tableSolver/tableSolver.C\
+flameletTable/modifiedLinearInterpolation/modifiedLinearInterpolation.C\
+flameletTable/modifiedTableSolver/modifiedTableSolver.C\
 FPVModel/FPVModels.C\
+modifiedFPVModel/modifiedFPVModels.C\
 FPVtestModel/FPVtestModels.C\
 FPVunnormalizedModel/FPVunnormalizedModels.C\
 rhoFPVModel/rhoFPVModels.C

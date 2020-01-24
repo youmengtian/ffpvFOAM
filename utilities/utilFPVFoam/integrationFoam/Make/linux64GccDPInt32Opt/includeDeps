@@ -1,0 +1,3 @@
+include Gamma.dep
+include matlabReader.dep
+include integrationFoam.dep

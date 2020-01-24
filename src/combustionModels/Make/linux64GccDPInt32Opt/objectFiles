@@ -7,7 +7,10 @@ $(OBJECTS_DIR)/rhoChemistryCombustion.o\
 $(OBJECTS_DIR)/linearInterpolation.o\
 $(OBJECTS_DIR)/flameletTable.o\
 $(OBJECTS_DIR)/tableSolver.o\
+$(OBJECTS_DIR)/modifiedLinearInterpolation.o\
+$(OBJECTS_DIR)/modifiedTableSolver.o\
 $(OBJECTS_DIR)/FPVModels.o\
+$(OBJECTS_DIR)/modifiedFPVModels.o\
 $(OBJECTS_DIR)/FPVtestModels.o\
 $(OBJECTS_DIR)/FPVunnormalizedModels.o\
 $(OBJECTS_DIR)/rhoFPVModels.o

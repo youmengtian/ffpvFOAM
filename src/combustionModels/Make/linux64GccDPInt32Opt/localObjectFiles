@@ -7,7 +7,10 @@ rhoChemistryCombustion.o\
 linearInterpolation.o\
 flameletTable.o\
 tableSolver.o\
+modifiedLinearInterpolation.o\
+modifiedTableSolver.o\
 FPVModels.o\
+modifiedFPVModels.o\
 FPVtestModels.o\
 FPVunnormalizedModels.o\
 rhoFPVModels.o

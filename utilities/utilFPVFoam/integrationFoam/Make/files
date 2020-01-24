@@ -1,0 +1,5 @@
+Gamma.cpp
+matlabReader.C
+integrationFoam.C
+
+EXE = $(FOAM_USER_APPBIN)/integrationFoam
